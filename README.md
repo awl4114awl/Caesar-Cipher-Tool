@@ -39,4 +39,3 @@ This tool is perfect for learning about basic cryptography and exploring GUI dev
 
 ## License
 This project is licensed under the MIT License.
-```
