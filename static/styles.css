@@ -6,35 +6,32 @@ body {
   padding: 20px;
 }
 
-.container {
+h1 {
+  color: #F5F5F5;
+}
+
+label {
+  display: block;
+  margin: 10px 0 5px;
+}
+
+input {
+  padding: 5px;
+  margin-bottom: 10px;
+  width: 100%;
+  box-sizing: border-box;
   background-color: #3E3E3E;
-  border-radius: 5px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
-  padding: 20px;
-  max-width: 500px;
-  margin: auto;
-}
-
-h1, h2 {
-  margin-top: 0;
-}
-
-form {
-  display: grid;
-  grid-gap: 10px;
-}
-
-input, button {
-  padding: 10px;
-  font-size: 16px;
+  color: #F5F5F5;
+  border: 1px solid #4E4E4E;
 }
 
 button {
+  padding: 10px 20px;
+  margin-right: 10px;
   background-color: #4E4E4E;
   color: #F5F5F5;
   border: none;
   cursor: pointer;
-  border-radius: 5px;
 }
 
 button:hover {
@@ -42,8 +39,7 @@ button:hover {
 }
 
 #result {
-  background-color: #3E3E3E;
-  padding: 10px;
-  border-radius: 5px;
-  word-break: break-word;
+  margin-top: 20px;
+  font-size: 1.2em;
+  color: #F5F5F5;
 }
