@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Caesar Cipher Tool</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Caesar Cipher Tool</h1>
+        <form id="cipher-form">
+            <label for="text">Enter text:</label>
+            <input type="text" id="text" name="text" required>
+            <label for="shift">Enter shift:</label>
+            <input type="number" id="shift" name="shift" required>
+            <button type="submit" id="encrypt-btn">Encrypt</button>
+            <button type="button" id="decrypt-btn">Decrypt</button>
+        </form>
+        <h2>Result:</h2>
+        <p id="result"></p>
+    </div>
+    <script>
+        document.getElementById('encrypt-btn').addEventListener('click', function(event) {
+            event.preventDefault();
+            const text = document.getElementById('text').value;
+            const shift = document.getElementById('shift').value;
+
+            fetch('/encrypt', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                },
+                body: `text=${text}&shift=${shift}`
+            })
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('result').textContent = data.result;
+            });
+        });
+
+        document.getElementById('decrypt-btn').addEventListener('click', function(event) {
+            event.preventDefault();
+            const text = document.getElementById('text').value;
+            const shift = document.getElementById('shift').value;
+
+            fetch('/decrypt', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                },
+                body: `text=${text}&shift=${shift}`
+            })
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('result').textContent = data.result;
+            });
+        });
+    </script>
+</body>
+</html>
