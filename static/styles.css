@@ -1,18 +1,24 @@
 body {
-  font-family: Arial, sans-serif;
+  font-family: 'Consolas', monospace; /* Set Consolas as the primary font */
   background-color: #2E2E2E;
   color: #F5F5F5;
   margin: 0;
   padding: 20px;
+  max-width: 400px; /* Set a maximum width for the body */
+  margin: 0 auto;  /* Center the content */
 }
 
 h1 {
   color: #F5F5F5;
+  font-family: 'Consolas', monospace; /* Consolas for h1 */
+  font-size: 1.5em; /* Adjust size for heading */
 }
 
 label {
   display: block;
   margin: 10px 0 5px;
+  font-family: 'Consolas', monospace; /* Consolas for labels */
+  font-size: 1em; /* Set font size for labels */
 }
 
 input {
@@ -23,6 +29,8 @@ input {
   background-color: #3E3E3E;
   color: #F5F5F5;
   border: 1px solid #4E4E4E;
+  font-family: 'Consolas', monospace; /* Consolas for inputs */
+  font-size: 1em; /* Set font size for inputs */
 }
 
 button {
@@ -32,6 +40,8 @@ button {
   color: #F5F5F5;
   border: none;
   cursor: pointer;
+  font-family: 'Consolas', monospace; /* Consolas for buttons */
+  font-size: 1em; /* Set font size for buttons */
 }
 
 button:hover {
@@ -40,6 +50,7 @@ button:hover {
 
 #result {
   margin-top: 20px;
-  font-size: 1.2em;
+  font-size: 1em; /* Set font size for result */
   color: #F5F5F5;
+  font-family: 'Consolas', monospace; /* Consolas for result */
 }
