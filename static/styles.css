@@ -51,7 +51,7 @@ button:hover {
 }
 
 #result {
-  margin-top: 20px;
+  margin-top: 10px;
   font-size: 1em; /* Set font size for result */
   color: #F5F5F5;
   font-family: 'Consolas', monospace; /* Consolas for result */
