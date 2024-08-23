@@ -1,7 +1,5 @@
 # Caesar Cipher Tool
 
-## Overview
-
 The Caesar Cipher Tool is a versatile and user-friendly application designed to perform encryption and decryption using the Caesar Cipher technique. The tool allows you to easily transform text by shifting its letters by a specified number of positions. This application also provides several features, such as saving and loading text files, copying results to the clipboard, and customizing the font used in the UI. The tool is built using `customtkinter`, a modern, customizable GUI library for Python.
 
 ## Features
