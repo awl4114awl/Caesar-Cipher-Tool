@@ -40,14 +40,9 @@ This version includes:
 
 ## 🖥️ Screenshots
 
-*(optional — insert screenshots here if you want to show the GUI layout)*  
-Example filenames:
-```
-
-images/Screenshot 2025-11-12 111055.png
-images/Screenshot 2025-11-12 112540.png
-
-````
+<p align="left">
+  <img src="images/Screenshot 2025-11-03 110705.png" width="750">
+</p>
 
 ---
 
