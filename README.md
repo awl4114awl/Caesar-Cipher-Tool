@@ -41,7 +41,7 @@ This version includes:
 ## 🖥️ Screenshots
 
 <p align="left">
-  <img src="images/Screenshot 2025-11-03 110705.png" width="750">
+  <img src="screenshots/Screenshot 2025-11-12 134110.png" width="750">
 </p>
 
 ---
