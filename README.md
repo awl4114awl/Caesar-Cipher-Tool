@@ -42,8 +42,9 @@ This version includes:
 
 <p align="left">
   <img src="screenshots/Screenshot 2025-11-12 134110.png" width="300">
-  <img src="screenshots/Screenshot 2025-11-12 134110.png" width="300">
-  <img src="screenshots/Screenshot 2025-11-12 134110.png" width="300">
+  <img src="screenshots/Screenshot 2025-11-12 142034.png" width="300">
+  <img src="screenshots/Screenshot 2025-11-12 142159.png" width="300">
+  <img src="screenshots/Screenshot 2025-11-12 142636.png" width="300">
 </p>
 
 ---
