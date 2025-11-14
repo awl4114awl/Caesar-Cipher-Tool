@@ -79,11 +79,33 @@ pip install -r requirements.txt
 python caesar_cipher_tool.py
 ```
 
-or if using the modular structure:
+or, for the modular structure:
 
 ```bash
 python -m caesar_tool.ui_app
 ```
+
+---
+
+## 🛠️ Optional: Quick Setup in PyCharm
+
+1. Open **PyCharm** → **File → Open…** → select this repository folder.
+2. When prompted, let PyCharm create a **virtual environment** automatically.
+3. Install dependencies:
+
+   ```bash
+   pip install -r requirements.txt
+   ```
+4. Create a Run Configuration:
+
+   * Go to **Run → Edit Configurations**
+   * Click **+** → select **Python**
+   * Set **Script path:**
+     `caesar_tool/ui_app.py`
+   * Set **Working directory:**
+     the project root folder
+   * Ensure the interpreter is the project’s venv
+5. Click **Run ▶️** to launch the GUI inside PyCharm.
 
 ---
 
@@ -144,7 +166,7 @@ Caesar-Cipher-Tool/
 ├─ README.md
 ├─ requirements.txt
 ├─ .gitignore
-└─ pyproject.toml        # optional 
+└─ pyproject.toml        # optional
 ```
 
 ---
