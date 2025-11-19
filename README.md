@@ -77,6 +77,7 @@ Windows utility–style theming for consistency across tools.
 Caesar-Cipher-Tool/
 │
 ├── .gitignore
+├── LICENSE
 ├── requirements.txt
 ├── caesar_cipher_tool.py
 ├── screenshots/
