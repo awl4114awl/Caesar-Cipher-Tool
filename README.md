@@ -1,6 +1,6 @@
 # 🧩 **Caesar Cipher Tool**
 
-### *Dark Famicom Retro Theme – Python 3.14*
+### *Dark Utility Theme – Python 3.14*
 
 ![Python](https://img.shields.io/badge/Python-3.14-blue?style=for-the-badge\&logo=python\&logoColor=white)
 ![customtkinter](https://img.shields.io/badge/GUI-CustomTkinter-5A5A5A?style=for-the-badge)
@@ -43,8 +43,7 @@ This gives the tool a unique “retro hardware utility” vibe while remaining c
 
 
 <p align="left">
-  <img src="screenshots/Screenshot 2025-11-18 114400.png" width="500">
-  <img src="screenshots/Screenshot 2025-11-18 123907.png" width="500">
+  <img src="screenshots/Screenshot 2025-11-18 181539.png" width="500">
 </p>
 
 ---
@@ -87,10 +86,6 @@ Helpful when analyzing text samples or cryptography puzzles.
 ### **✔ Fully Resizable Text Panels**
 
 Dark, minimal, retro-themed UI.
-
-### **✔ Custom App Icon**
-
-Matching retro Famicom-inspired icon included.
 
 ---
 
@@ -186,7 +181,7 @@ Caesar-Cipher-Tool/
 ├── screenshots/
 │   ├── icon.ico
 │   ├── icon.png
-│   └── screenshot.png
+│   └── Screenshot 2025-11-18 173954.png
 └── .venv/
 ```
 
@@ -204,13 +199,5 @@ Caesar-Cipher-Tool/
 ## 📜 License
 
 This project is licensed under the **MIT License**.
-
----
-
-## ⭐ Acknowledgments
-
-* Inspired by classic retro consoles (Famicom/Super Famicom)
-* Built to enhance my **cybersecurity + Python GUI portfolio**
-* Designed fully custom: color theme, window layout, and icon
 
 ---

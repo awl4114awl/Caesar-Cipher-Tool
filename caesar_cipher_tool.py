@@ -1,35 +1,37 @@
 """
-Caesar Cipher Tool (Dark Famicom Retro Theme)
+Caesar Cipher Tool
+Dark Windows Utility Theme (matches Active Network & Fingerprint Scanner)
 Python 3.14 + customtkinter
-
-- Encrypt / Decrypt text with a Caesar cipher
-- Dark retro Nintendo-inspired theme
-- Red + purple Famicom/SNES accents
-- Copy, Save, Word/Char count, Brute Force
 """
 
 import customtkinter as ctk
 from tkinter import messagebox
+import ctypes
+import os
 
 
-# ---------------------- Retro Famicom Dark Theme ---------------------- #
-APP_BG         = "#1b1a17"   # warm, deep charcoal
-HEADER_BG      = "#252422"   # darker plastic console panel
-PANEL_BG       = "#2b2a27"   # mid-dark warm paneling
-TEXTBOX_BG     = "#2e2c29"   # slightly lighter box
-BORDER_COLOR   = "#403d39"   # soft warm-gray border
-
-ACCENT_RED     = "#d8352c"   # famicom red
-ACCENT_RED_HOV = "#e14a41"   # lifted hover red
-
-ACCENT_PURPLE     = "#6b6478"  # nes modifier purple
-ACCENT_PURPLE_HOV = "#7b728c"  # hover
-
-TEXT_MAIN      = "#e8e6df"   # off-white warm
-TEXT_MUTED     = "#b8b5ad"   # muted warm-gray
+# ------------------------------------------------------------
+#  Paths / Icon
+# ------------------------------------------------------------
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+ICON_PATH = os.path.join(BASE_DIR, "screenshots", "icon.ico")
 
 
-# ---------------------- Cipher Logic ---------------------- #
+# ------------------------------------------------------------
+#  Dark Windows Utility Theme (EXACT scanner app match)
+# ------------------------------------------------------------
+BG_MAIN        = "#1b1b1b"   # main window background
+BG_PANEL       = "#242424"   # panel / frame background
+BG_CONTROL     = "#1f1f1f"   # entries, buttons, textboxes
+BG_CONTROL_HOV = "#2a2a2a"   # hover color
+BORDER_COLOR   = "#5a5a5a"   # thin border identical to scanner
+TEXT_MAIN      = "#f2f2f2"
+TEXT_MUTED     = "#c0c0c0"
+
+
+# ------------------------------------------------------------
+#  Cipher Logic
+# ------------------------------------------------------------
 def caesar_shift(text: str, shift: int) -> str:
     result = []
     shift = shift % 26
@@ -47,294 +49,294 @@ def caesar_shift(text: str, shift: int) -> str:
     return "".join(result)
 
 
-# ---------------------- GUI Class ---------------------- #
+# ------------------------------------------------------------
+#  GUI Application
+# ------------------------------------------------------------
 class CaesarCipherApp(ctk.CTk):
     def __init__(self):
         super().__init__()
 
+        # Proper Windows taskbar icon
+        try:
+            ctypes.windll.shell32.SetCurrentProcessExplicitAppUserModelID(
+                "CaesarCipherTool.DarkUtility"
+            )
+        except Exception:
+            pass
+
         self.title("Caesar Cipher Tool")
-        self.title("Caesar Cipher Tool")
-        self.iconbitmap("screenshots/icon.ico")
-        self.geometry("640x430")
+
+        if os.path.exists(ICON_PATH):
+            try:
+                self.iconbitmap(ICON_PATH)
+            except:
+                pass
+
+        self.geometry("650x440")
         self.resizable(False, False)
 
+        # customtkinter global settings
         ctk.set_appearance_mode("dark")
         ctk.set_default_color_theme("dark-blue")
 
-        self.configure(fg_color=APP_BG)
-        self._mono_font = ("Consolas", 12)
+        self.configure(fg_color=BG_MAIN)
+        self._font_label = ("Segoe UI", 11)
+        self._font_mono = ("Consolas", 12)
 
-        self.grid_columnconfigure(0, weight=1)
-        self.grid_columnconfigure(1, weight=1)
-        self.grid_rowconfigure(1, weight=1)
+        # Grid setup
+        self.grid_columnconfigure((0, 1), weight=1)
+        self.grid_rowconfigure(2, weight=1)
 
         self._build_header()
         self._build_controls()
         self._build_text_areas()
         self._build_footer()
 
-    # ---------------- Header ---------------- #
+
+    # --------------------------------------------------------
+    #  Header (scanner-style)
+    # --------------------------------------------------------
     def _build_header(self):
-        header_frame = ctk.CTkFrame(self, fg_color=HEADER_BG, corner_radius=10)
-        header_frame.grid(row=0, column=0, columnspan=2,
-                          padx=12, pady=(10, 6), sticky="nsew")
-
-        header_frame.grid_columnconfigure(0, weight=1)
-
-        title_label = ctk.CTkLabel(
-            header_frame,
-            text="🧩 Caesar Cipher",
-            font=("Consolas", 16, "bold"),
-            text_color=ACCENT_RED
+        frame = ctk.CTkFrame(
+            self, fg_color=BG_PANEL,
+            border_color=BORDER_COLOR,
+            border_width=1,
+            corner_radius=0
         )
-        title_label.grid(row=0, column=0, sticky="w", padx=10, pady=(6, 0))
+        frame.grid(row=0, column=0, columnspan=2,
+                   padx=8, pady=(8, 4), sticky="ew")
 
-        subtitle_label = ctk.CTkLabel(
-            header_frame,
-            text="Dark Famicom Retro Theme – Python 3.14",
-            font=("Consolas", 11),
+        title = ctk.CTkLabel(
+            frame,
+            text="Caesar Cipher Tool",
+            font=("Segoe UI", 16, "bold"),
+            text_color=TEXT_MAIN
+        )
+        title.grid(row=0, column=0, sticky="w", padx=10, pady=(6, 0))
+
+        subtitle = ctk.CTkLabel(
+            frame,
+            text="Encrypt / Decrypt • Brute Force • Windows Utility UI",
+            font=("Segoe UI", 10),
             text_color=TEXT_MUTED
         )
-        subtitle_label.grid(row=1, column=0, sticky="w", padx=10, pady=(0, 6))
+        subtitle.grid(row=1, column=0, sticky="w", padx=10, pady=(0, 6))
 
-    # ---------------- Controls ---------------- #
+
+    # --------------------------------------------------------
+    #  Mode selector + Shift (scanner-style)
+    # --------------------------------------------------------
     def _build_controls(self):
-        controls_frame = ctk.CTkFrame(self, fg_color=PANEL_BG, corner_radius=10)
-        controls_frame.grid(row=1, column=0, columnspan=2,
-                            padx=12, pady=(0, 6), sticky="ew")
+        frame = ctk.CTkFrame(
+            self, fg_color=BG_PANEL,
+            border_color=BORDER_COLOR,
+            border_width=1,
+            corner_radius=0
+        )
+        frame.grid(row=1, column=0, columnspan=2,
+                   padx=8, pady=(0, 4), sticky="ew")
 
-        controls_frame.grid_columnconfigure(0, weight=1)
-        controls_frame.grid_columnconfigure(1, weight=1)
-        controls_frame.grid_columnconfigure(2, weight=1)
-        controls_frame.grid_columnconfigure(3, weight=1)
+        frame.grid_columnconfigure((0,1,2,3), weight=1)
 
-        # Mode Label
+        # Mode label
         mode_label = ctk.CTkLabel(
-            controls_frame,
-            text="Mode",
-            font=self._mono_font,
+            frame,
+            text="Mode:",
+            font=self._font_label,
             text_color=TEXT_MUTED
         )
-        mode_label.grid(row=0, column=0, sticky="w", padx=(10, 4), pady=6)
+        mode_label.grid(row=0, column=0, sticky="w", padx=10, pady=10)
 
         self.mode_var = ctk.StringVar(value="Encrypt")
 
-        # Mode Switch
-        self.mode_seg = ctk.CTkSegmentedButton(
-            controls_frame,
-            values=["Encrypt", "Decrypt"],
-            variable=self.mode_var,
-            fg_color=TEXTBOX_BG,
-            selected_color=ACCENT_RED,
-            selected_hover_color=ACCENT_RED_HOV,
-            unselected_color=PANEL_BG,
-            unselected_hover_color="#3a3835",
-            font=("Consolas", 11),
-            text_color=TEXT_MAIN
-        )
-        self.mode_seg.grid(row=0, column=1, sticky="w", padx=(0, 10), pady=6)
+        # Tab-style mode buttons (EXACT scanner style)
+        def tab_style(selected):
+            return dict(
+                fg_color=("#2a2a2a" if selected else BG_CONTROL),
+                hover_color=BG_CONTROL_HOV,
+                border_color=BORDER_COLOR,
+                border_width=1,
+                corner_radius=3,
+                text_color=TEXT_MAIN,
+                font=("Segoe UI", 10),
+                width=75
+            )
 
-        # Shift Label
+        self.enc_btn = ctk.CTkButton(
+            frame,
+            text="Encrypt",
+            command=lambda: self._set_mode("Encrypt"),
+            **tab_style(True)
+        )
+        self.enc_btn.grid(row=0, column=1, padx=4)
+
+        self.dec_btn = ctk.CTkButton(
+            frame,
+            text="Decrypt",
+            command=lambda: self._set_mode("Decrypt"),
+            **tab_style(False)
+        )
+        self.dec_btn.grid(row=0, column=2, padx=4)
+
+        # Shift label
         shift_label = ctk.CTkLabel(
-            controls_frame,
-            text="Shift",
-            font=self._mono_font,
+            frame,
+            text="Shift:",
+            font=self._font_label,
             text_color=TEXT_MUTED
         )
-        shift_label.grid(row=0, column=2, sticky="e", padx=(10, 4), pady=6)
+        shift_label.grid(row=0, column=3, sticky="e", padx=(0, 6))
 
-        # Shift Entry
+        # Shift entry
         self.shift_entry = ctk.CTkEntry(
-            controls_frame,
-            width=60,
-            fg_color=TEXTBOX_BG,
-            text_color=TEXT_MAIN,
-            border_color=ACCENT_RED,
+            frame,
+            width=70,
+            fg_color=BG_CONTROL,
+            border_color=BORDER_COLOR,
             border_width=1,
-            font=self._mono_font,
+            corner_radius=3,
+            text_color=TEXT_MAIN,
+            font=self._font_mono,
             justify="center"
         )
         self.shift_entry.insert(0, "3")
-        self.shift_entry.grid(row=0, column=3, sticky="w", padx=(0, 10), pady=6)
+        self.shift_entry.grid(row=0, column=4, sticky="w", padx=(0, 10))
 
-    # ---------------- Text Areas ---------------- #
+
+    def _set_mode(self, mode):
+        self.mode_var.set(mode)
+
+        # Update tab appearance
+        self.enc_btn.configure(
+            fg_color="#2a2a2a" if mode == "Encrypt" else BG_CONTROL
+        )
+        self.dec_btn.configure(
+            fg_color="#2a2a2a" if mode == "Decrypt" else BG_CONTROL
+        )
+
+
+    # --------------------------------------------------------
+    #  Text Areas (scanner-style textboxes)
+    # --------------------------------------------------------
     def _build_text_areas(self):
-        text_frame = ctk.CTkFrame(self, fg_color=PANEL_BG, corner_radius=10)
-        text_frame.grid(row=2, column=0, columnspan=2,
-                        padx=12, pady=(0, 6), sticky="nsew")
+        frame = ctk.CTkFrame(
+            self, fg_color=BG_PANEL,
+            border_color=BORDER_COLOR,
+            border_width=1,
+            corner_radius=0
+        )
+        frame.grid(row=2, column=0, columnspan=2,
+                   padx=8, pady=(0, 4), sticky="nsew")
 
-        text_frame.grid_columnconfigure(0, weight=1)
-        text_frame.grid_columnconfigure(1, weight=1)
-        text_frame.grid_rowconfigure(1, weight=1)
+        frame.grid_columnconfigure((0, 1), weight=1)
+        frame.grid_rowconfigure(1, weight=1)
 
         in_label = ctk.CTkLabel(
-            text_frame,
+            frame,
             text="Plaintext / Ciphertext",
-            font=self._mono_font,
-            text_color=TEXT_MUTED
+            text_color=TEXT_MUTED,
+            font=self._font_label
         )
-        in_label.grid(row=0, column=0, sticky="w", padx=10, pady=(6, 2))
+        in_label.grid(row=0, column=0, sticky="w", padx=10, pady=(6,2))
 
         out_label = ctk.CTkLabel(
-            text_frame,
+            frame,
             text="Result",
-            font=self._mono_font,
-            text_color=TEXT_MUTED
+            text_color=TEXT_MUTED,
+            font=self._font_label
         )
-        out_label.grid(row=0, column=1, sticky="w", padx=10, pady=(6, 2))
+        out_label.grid(row=0, column=1, sticky="w", padx=10, pady=(6,2))
 
-        # Input box
+        # Input textbox
         self.input_box = ctk.CTkTextbox(
-            text_frame,
-            fg_color=TEXTBOX_BG,
-            text_color=TEXT_MAIN,
+            frame,
+            fg_color=BG_CONTROL,
             border_color=BORDER_COLOR,
             border_width=1,
-            font=self._mono_font,
+            corner_radius=3,
+            text_color=TEXT_MAIN,
+            font=self._font_mono,
             wrap="word",
-            corner_radius=8,
-            height=155
+            height=160
         )
-        self.input_box.grid(row=1, column=0, padx=(10, 5), pady=(0, 8), sticky="nsew")
+        self.input_box.grid(row=1, column=0,
+                            padx=(10, 4), pady=(2, 8), sticky="nsew")
         self.input_box.bind("<KeyRelease>", self.update_counts)
 
-        # Output box
+        # Output textbox (read-only)
         self.output_box = ctk.CTkTextbox(
-            text_frame,
-            fg_color=TEXTBOX_BG,
-            text_color=ACCENT_RED,
+            frame,
+            fg_color=BG_CONTROL,
             border_color=BORDER_COLOR,
             border_width=1,
-            font=self._mono_font,
+            corner_radius=3,
+            text_color="#8bbcff",      # scanner-style highlight color
+            font=self._font_mono,
             wrap="word",
-            corner_radius=8,
-            height=155
+            height=160
         )
-        self.output_box.grid(row=1, column=1, padx=(5, 10), pady=(0, 8), sticky="nsew")
+        self.output_box.grid(row=1, column=1,
+                             padx=(4, 10), pady=(2, 8), sticky="nsew")
         self.output_box.configure(state="disabled")
 
-    # ---------------- Footer ---------------- #
+
+    # --------------------------------------------------------
+    #  Footer Buttons (EXACT scanner style)
+    # --------------------------------------------------------
     def _build_footer(self):
-        footer_frame = ctk.CTkFrame(self, fg_color=PANEL_BG, corner_radius=10)
-        footer_frame.grid(row=3, column=0, columnspan=2,
-                          padx=12, pady=(0, 10), sticky="ew")
+        frame = ctk.CTkFrame(
+            self, fg_color=BG_PANEL,
+            border_color=BORDER_COLOR,
+            border_width=1,
+            corner_radius=0
+        )
+        frame.grid(row=3, column=0, columnspan=2,
+                   padx=8, pady=(0, 8), sticky="ew")
 
-        footer_frame.grid_columnconfigure(0, weight=1)
-        for i in range(1, 7):
-            footer_frame.grid_columnconfigure(i, weight=0)
+        frame.grid_columnconfigure(0, weight=1)
 
+        # Status label
         self.status_label = ctk.CTkLabel(
-            footer_frame,
+            frame,
             text="ready",
-            font=("Consolas", 11),
+            font=("Segoe UI", 10),
             text_color=TEXT_MUTED,
-            anchor="w",
-            width=350
+            anchor="w"
         )
-        self.status_label.grid(row=0, column=0, sticky="w", padx=14, pady=6)
+        self.status_label.grid(row=0, column=0, sticky="w", padx=10, pady=6)
 
-        # Buttons
-        run_btn = ctk.CTkButton(
-            footer_frame,
-            text="Run",
-            command=self.run_cipher,
-            fg_color=ACCENT_RED,
-            hover_color=ACCENT_RED_HOV,
-            text_color="#ffffff",
-            font=self._mono_font,
-            width=75,
-            corner_radius=8
-        )
-        run_btn.grid(row=0, column=1, padx=(0, 6), pady=6)
-
-        brute_btn = ctk.CTkButton(
-            footer_frame,
-            text="Brute Force",
-            command=self.brute_force_view,
-            fg_color=ACCENT_PURPLE,
-            hover_color=ACCENT_PURPLE_HOV,
-            text_color="#ffffff",
-            font=self._mono_font,
-            width=95,
-            corner_radius=8
-        )
-        brute_btn.grid(row=0, column=2, padx=(0, 6), pady=6)
-
-        clear_btn = ctk.CTkButton(
-            footer_frame,
-            text="Clear",
-            command=self.clear_all,
-            fg_color=ACCENT_PURPLE,
-            hover_color=ACCENT_PURPLE_HOV,
-            text_color="#ffffff",
-            font=self._mono_font,
-            width=70,
-            corner_radius=8
-        )
-        clear_btn.grid(row=0, column=3, padx=(0, 6), pady=6)
-
-        copy_btn = ctk.CTkButton(
-            footer_frame,
-            text="Copy",
-            command=self.copy_result,
-            fg_color=ACCENT_PURPLE,
-            hover_color=ACCENT_PURPLE_HOV,
-            text_color="#ffffff",
-            font=self._mono_font,
-            width=70,
-            corner_radius=8
-        )
-        copy_btn.grid(row=0, column=4, padx=(0, 6), pady=6)
-
-        save_btn = ctk.CTkButton(
-            footer_frame,
-            text="Save",
-            command=self.save_result,
-            fg_color=ACCENT_PURPLE,
-            hover_color=ACCENT_PURPLE_HOV,
-            text_color="#ffffff",
-            font=self._mono_font,
-            width=70,
-            corner_radius=8
-        )
-        save_btn.grid(row=0, column=5, padx=(0, 10), pady=6)
-
-        self.bind("<Control-Return>", lambda _event: self.run_cipher())
-
-    # ---------------- Copy to Clipboard ---------------- #
-    def copy_result(self):
-        output = self.output_box.get("1.0", "end-1c").strip()
-        if not output:
-            self.status_label.configure(text="nothing to copy")
-            return
-
-        try:
-            import pyperclip
-            pyperclip.copy(output)
-            self.status_label.configure(text="copied to clipboard")
-        except Exception:
-            self.status_label.configure(text="copy failed")
-
-    # ---------------- Save to File ---------------- #
-    def save_result(self):
-        from tkinter import filedialog
-
-        result = self.output_box.get("1.0", "end-1c").strip()
-        if not result:
-            self.status_label.configure(text="nothing to save")
-            return
-
-        file_path = filedialog.asksaveasfilename(
-            defaultextension=".txt",
-            filetypes=[("Text Files", "*.txt"), ("All Files", "*.*")]
+        # Button style (EXACT scanner style)
+        btn_cfg = dict(
+            fg_color=BG_CONTROL,
+            hover_color=BG_CONTROL_HOV,
+            border_color=BORDER_COLOR,
+            border_width=1,
+            corner_radius=3,
+            text_color=TEXT_MAIN,
+            font=("Segoe UI", 10),
+            width=90,
+            height=32
         )
 
-        if file_path:
-            with open(file_path, "w", encoding="utf-8") as f:
-                f.write(result)
-            self.status_label.configure(text=f"saved to {file_path}")
+        ctk.CTkButton(frame, text="Run", command=self.run_cipher, **btn_cfg)\
+            .grid(row=0, column=1, padx=4)
 
-    # ---------------- Logic Callbacks ---------------- #
+        ctk.CTkButton(frame, text="Brute", command=self.brute_force_view, **btn_cfg)\
+            .grid(row=0, column=2, padx=4)
+
+        ctk.CTkButton(frame, text="Clear", command=self.clear_all, **btn_cfg)\
+            .grid(row=0, column=3, padx=4)
+
+        ctk.CTkButton(frame, text="Copy", command=self.copy_result, **btn_cfg)\
+            .grid(row=0, column=4, padx=4)
+
+        ctk.CTkButton(frame, text="Save", command=self.save_result, **btn_cfg)\
+            .grid(row=0, column=5, padx=(4, 10))
+
+
+    # --------------------------------------------------------
+    #  Logic / Handlers
+    # --------------------------------------------------------
     def run_cipher(self):
         text = self.input_box.get("1.0", "end-1c")
         mode = self.mode_var.get()
@@ -362,11 +364,13 @@ class CaesarCipherApp(ctk.CTk):
 
         self.status_label.configure(text=f"{mode.lower()}ed with shift {raw_shift}")
 
+
     def update_counts(self, _event=None):
         text = self.input_box.get("1.0", "end-1c")
         chars = len(text)
         words = len(text.split())
         self.status_label.configure(text=f"{chars} chars | {words} words")
+
 
     def clear_all(self):
         self.input_box.delete("1.0", "end")
@@ -375,32 +379,61 @@ class CaesarCipherApp(ctk.CTk):
         self.output_box.configure(state="disabled")
         self.status_label.configure(text="cleared")
 
+
+    def copy_result(self):
+        output = self.output_box.get("1.0", "end-1c").strip()
+        if not output:
+            self.status_label.configure(text="nothing to copy")
+            return
+
+        try:
+            import pyperclip
+            pyperclip.copy(output)
+            self.status_label.configure(text="copied to clipboard")
+        except Exception:
+            self.status_label.configure(text="copy failed (pyperclip missing?)")
+
+
+    def save_result(self):
+        from tkinter import filedialog
+        result = self.output_box.get("1.0", "end-1c").strip()
+
+        if not result:
+            self.status_label.configure(text="nothing to save")
+            return
+
+        file_path = filedialog.asksaveasfilename(
+            defaultextension=".txt",
+            filetypes=[("Text Files", "*.txt"), ("All Files", "*.*")]
+        )
+
+        if file_path:
+            with open(file_path, "w", encoding="utf-8") as f:
+                f.write(result)
+            self.status_label.configure(text=f"saved to {file_path}")
+
+
     def brute_force_view(self):
-        """Show all 26 possible shifts directly in the output box."""
         text = self.input_box.get("1.0", "end-1c")
 
         if not text.strip():
             messagebox.showinfo("No Text", "Enter some ciphertext or plaintext to brute force.")
             return
 
-        # Build brute-force list
-        lines = []
-        for s in range(26):
-            lines.append(f"Shift {s:2d}: {caesar_shift(text, s)}")
-
+        lines = [f"Shift {s:2d}: {caesar_shift(text, s)}" for s in range(26)]
         result_text = "\n".join(lines)
 
-        # Display inside the main output box
         self.output_box.configure(state="normal")
         self.output_box.delete("1.0", "end")
         self.output_box.insert("1.0", result_text)
         self.output_box.configure(state="disabled")
 
-        # Update status
-        self.status_label.configure(text="brute-forced all shifts 0–25")
+        self.status_label.configure(text="brute-forced shifts 0–25")
 
 
-# ---------------- Entry Point ---------------- #
+# ------------------------------------------------------------
+#  Entry Point
+# ------------------------------------------------------------
 if __name__ == "__main__":
     app = CaesarCipherApp()
     app.mainloop()
