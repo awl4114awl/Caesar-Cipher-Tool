@@ -39,6 +39,15 @@ The entire application visually matches the style of native Windows admin utilit
 
 ---
 
+## 🛠️ Technologies Used
+
+* **Python 3.14**
+* **CustomTkinter** (lightweight modern UI components)
+* **Pyperclip** (clipboard integration)
+* **Pillow** (icon handling)
+
+---
+
 ## 🖼️ GUI Preview
 
 <p align="left">
@@ -184,26 +193,8 @@ Caesar-Cipher-Tool/
 
 ---
 
-## 🛠️ Technologies Used
-
-* **Python 3.14**
-* **CustomTkinter** (lightweight modern UI components)
-* **Pyperclip** (clipboard integration)
-* **Pillow** (icon handling)
-
----
-
 ## 📜 License
 
 This project is licensed under the **MIT License**.
 
 ---
-
-If you want, I can also generate:
-
-✅ a **GitHub-optimized README header**
-✅ a **Features table**
-✅ a **consistent dark-mode badge theme**
-✅ a **“Before / After” UI comparison section**
-
-Just say: **“enhance the README further”**
