@@ -1,15 +1,13 @@
-# 🧩 **Caesar Cipher Tool**
-
-### *Windows Utility Dark Theme – Python 3.14*
+# 🪛 **Caesar Cipher Tool**
 
 ![Python](https://img.shields.io/badge/Python-3.14-blue?style=for-the-badge\&logo=python\&logoColor=white)
-![customtkinter](https://img.shields.io/badge/GUI-CustomTkinter-2E2E2E?style=for-the-badge)
-![Platform](https://img.shields.io/badge/Platform-Windows-3b82f6?style=for-the-badge)
+![CustomTkinter](https://img.shields.io/badge/GUI-CustomTkinter-0A84FF?style=for-the-badge)
+![Windows](https://img.shields.io/badge/Platform-Windows-lightgrey?style=for-the-badge&logo=windows11)
 ![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)
 
 ---
 
-## 🎮 Overview
+## 🧠 Overview
 
 The **Caesar Cipher Tool** is a modern, dark-themed Windows desktop application built using **Python 3.14** and **CustomTkinter**.
 It provides a clean and efficient interface for performing classical Caesar cipher operations, including:
@@ -21,30 +19,6 @@ It provides a clean and efficient interface for performing classical Caesar ciph
 * Viewing real-time character and word counts
 
 This tool is part of my cybersecurity & Python development portfolio — demonstrating GUI design, utility-tool aesthetics, and classical cryptography principles.
-
----
-
-## 🎨 Windows Utility Theme (Dark)
-
-This version uses the same **Windows Utility Dark Theme** as my *Active Network & Fingerprint Scanner*:
-
-* flat dark UI
-* soft borders
-* subtle hover states
-* Segoe UI & Consolas typography
-* sharp, compact layout
-* Windows-native button and panel styling
-
-The entire application visually matches the style of native Windows admin utilities.
-
----
-
-## 🛠️ Technologies Used
-
-* **Python 3.14**
-* **CustomTkinter** (lightweight modern UI components)
-* **Pyperclip** (clipboard integration)
-* **Pillow** (icon handling)
 
 ---
 
@@ -95,6 +69,22 @@ Perfect for analysis and text processing.
 
 Windows utility–style theming for consistency across tools.
 
+---
+
+## 📁 Project Structure
+
+```
+Caesar-Cipher-Tool/
+│
+├── .gitignore
+├── requirements.txt
+├── caesar_cipher_tool.py
+├── screenshots/
+│   ├── icon.ico
+│   ├── icon.png
+│   └── Screenshot 2025-11-18 173954.png
+└── .venv/
+```
 ---
 
 ## 📦 Installation
@@ -173,23 +163,6 @@ Useful for:
 * CTF competitions
 * introductory forensics
 * solving classical cipher problems
-
----
-
-## 📁 Project Structure
-
-```
-Caesar-Cipher-Tool/
-│
-├── .gitignore
-├── requirements.txt
-├── caesar_cipher_tool.py
-├── screenshots/
-│   ├── icon.ico
-│   ├── icon.png
-│   └── Screenshot 2025-11-18 173954.png
-└── .venv/
-```
 
 ---
 
