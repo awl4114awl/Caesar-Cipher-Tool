@@ -30,7 +30,7 @@ This tool is part of my cybersecurity & Python development portfolio — demonst
 
 ---
 
-## 🧩 App Icon
+## 🖥️ App Icon
 
 <p align="left">
   <img src="screenshots/icon.ico" width="50">
@@ -39,7 +39,7 @@ This tool is part of my cybersecurity & Python development portfolio — demonst
 
 ---
 
-## 🚀 Features
+## ☰ Features
 
 ### ✔ **Encrypt Mode**
 
@@ -87,7 +87,7 @@ Caesar-Cipher-Tool/
 ```
 ---
 
-## 📦 Installation
+## ⬇️ Installation
 
 ### 1. Clone the repository
 
@@ -128,7 +128,7 @@ The GUI launches immediately.
 
 ---
 
-## 🔐 How the Cipher Works
+## ❓ How the Cipher Works
 
 The **Caesar cipher** works by shifting letters by a specified number of positions:
 
@@ -149,7 +149,7 @@ The tool supports:
 
 ---
 
-## 🧪 Brute Force Mode
+## ⛓️‍💥 Brute Force Mode
 
 Clicking **Brute** displays:
 
@@ -166,7 +166,7 @@ Useful for:
 
 ---
 
-## 📜 License
+## 🪪 License
 
 This project is licensed under the **MIT License**.
 
