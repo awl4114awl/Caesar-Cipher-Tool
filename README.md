@@ -1,9 +1,9 @@
 # 🧩 **Caesar Cipher Tool**
 
-### *Dark Utility Theme – Python 3.14*
+### *Windows Utility Dark Theme – Python 3.14*
 
 ![Python](https://img.shields.io/badge/Python-3.14-blue?style=for-the-badge\&logo=python\&logoColor=white)
-![customtkinter](https://img.shields.io/badge/GUI-CustomTkinter-5A5A5A?style=for-the-badge)
+![customtkinter](https://img.shields.io/badge/GUI-CustomTkinter-2E2E2E?style=for-the-badge)
 ![Platform](https://img.shields.io/badge/Platform-Windows-3b82f6?style=for-the-badge)
 ![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)
 
@@ -11,36 +11,35 @@
 
 ## 🎮 Overview
 
-The **Caesar Cipher Tool** is a retro-styled, modern dark-mode GUI application built with **Python 3.14** and **CustomTkinter**.
-It allows users to:
+The **Caesar Cipher Tool** is a modern, dark-themed Windows desktop application built using **Python 3.14** and **CustomTkinter**.
+It provides a clean and efficient interface for performing classical Caesar cipher operations, including:
 
-* Encrypt text using Caesar shift
-* Decrypt ciphertext
-* Automatically brute-force all 26 possible shifts inside the main window
-* Copy results
-* Save results
-* Enjoy a clean, compact, Famicom-inspired retro interface
+* Encrypting plaintext by shifting characters
+* Decrypting ciphertext by applying the inverse shift
+* Brute-forcing all 26 shifts directly within the main window
+* Copying or saving results
+* Viewing real-time character and word counts
 
-This tool was built as part of my cybersecurity/python portfolio — demonstrating GUI development, clean UI design, and classical cryptography concepts.
+This tool is part of my cybersecurity & Python development portfolio — demonstrating GUI design, utility-tool aesthetics, and classical cryptography principles.
 
 ---
 
-## 🎨 Retro Theme (Dark Famicom)
+## 🎨 Windows Utility Theme (Dark)
 
-The entire GUI is styled after classic Nintendo hardware colors:
+This version uses the same **Windows Utility Dark Theme** as my *Active Network & Fingerprint Scanner*:
 
-* dark charcoal shell
-* muted warm accents
-* red function buttons
-* soft round corners
-* console-style icon in the title bar
+* flat dark UI
+* soft borders
+* subtle hover states
+* Segoe UI & Consolas typography
+* sharp, compact layout
+* Windows-native button and panel styling
 
-This gives the tool a unique “retro hardware utility” vibe while remaining clean and modern.
+The entire application visually matches the style of native Windows admin utilities.
 
 ---
 
 ## 🖼️ GUI Preview
-
 
 <p align="left">
   <img src="screenshots/Screenshot 2025-11-18 181539.png" width="500">
@@ -59,33 +58,33 @@ This gives the tool a unique “retro hardware utility” vibe while remaining c
 
 ## 🚀 Features
 
-### **✔ Encrypt Mode**
+### ✔ **Encrypt Mode**
 
-Shift plaintext by any positive or negative integer.
+Shift plaintext forward or backward using any integer value.
 
-### **✔ Decrypt Mode**
+### ✔ **Decrypt Mode**
 
-Reverse-shifts ciphertext back to readable text.
+Reverse-shifts ciphertext back into readable text.
 
-### **✔ Brute Force Mode**
+### ✔ **Brute Force Mode**
 
-Displays **all 26 shift possibilities** directly inside the main Result panel.
+Displays **all 26 possible shifts** inside the Result panel — ideal for CTFs and classical crypto challenges.
 
-### **✔ Clipboard Support**
+### ✔ **Clipboard Support**
 
-Quickly copy output via the `Copy` button.
+Copy output directly with one click.
 
-### **✔ Save Output**
+### ✔ **Save Output**
 
-Export the Result panel to a `.txt` file.
+Export results to a `.txt` file.
 
-### **✔ Real-Time Character/Word Count**
+### ✔ **Real-Time Character / Word Counts**
 
-Helpful when analyzing text samples or cryptography puzzles.
+Perfect for analysis and text processing.
 
-### **✔ Fully Resizable Text Panels**
+### ✔ **Fully Styled Modern GUI**
 
-Dark, minimal, retro-themed UI.
+Windows utility–style theming for consistency across tools.
 
 ---
 
@@ -126,13 +125,13 @@ pip install -r requirements.txt
 python caesar_cipher_tool.py
 ```
 
-The GUI will launch immediately.
+The GUI launches immediately.
 
 ---
 
 ## 🔐 How the Cipher Works
 
-The **Caesar cipher** shifts each letter by a given amount:
+The **Caesar cipher** works by shifting letters by a specified number of positions:
 
 ```
 Shift 3:
@@ -142,31 +141,29 @@ C → F
 ...
 ```
 
-The app supports:
+The tool supports:
 
-* uppercase
-* lowercase
-* negative shifts
-* brute-forcing unknown ciphertext
-
-Non-alphabet characters remain unchanged.
+* uppercase letters
+* lowercase letters
+* negative and large shifts
+* leaving non-alphabetic characters untouched
 
 ---
 
 ## 🧪 Brute Force Mode
 
-When you click **Brute Force**, the tool runs:
+Clicking **Brute** displays:
 
-* all shifts from **0 to 25**
-* displays them inline in the Result panel
-* highlights recognition patterns manually
+* every shift from **0 → 25**
+* each version on its own line
+* ideal for identifying readable plaintext
 
-This is extremely useful for:
+Useful for:
 
 * cybersecurity students
-* CTF challenges
-* forensics
-* solving classical cipher puzzles
+* CTF competitions
+* introductory forensics
+* solving classical cipher problems
 
 ---
 
@@ -190,9 +187,9 @@ Caesar-Cipher-Tool/
 ## 🛠️ Technologies Used
 
 * **Python 3.14**
-* **CustomTkinter** (modern themed Tkinter widgets)
-* **Pillow** (for app icon)
-* **Pyperclip** (clipboard support)
+* **CustomTkinter** (lightweight modern UI components)
+* **Pyperclip** (clipboard integration)
+* **Pillow** (icon handling)
 
 ---
 
@@ -201,3 +198,12 @@ Caesar-Cipher-Tool/
 This project is licensed under the **MIT License**.
 
 ---
+
+If you want, I can also generate:
+
+✅ a **GitHub-optimized README header**
+✅ a **Features table**
+✅ a **consistent dark-mode badge theme**
+✅ a **“Before / After” UI comparison section**
+
+Just say: **“enhance the README further”**
