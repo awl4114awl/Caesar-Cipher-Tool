@@ -180,7 +180,7 @@ Below is a quick comparison of how each mode behaves.
 
 ---
 
-### 1. **Encrypt / Decrypt Output**
+**1. Encrypt / Decrypt Output**
 
 When encrypting or decrypting, the output pane displays:
 
@@ -197,7 +197,7 @@ Gdkkn Vnqkc!
 
 ---
 
-### 2. **Brute Force Output**
+**2. Brute Force Output**
 
 Clicking **Brute** shows all shifts from 0 → 25:
 
