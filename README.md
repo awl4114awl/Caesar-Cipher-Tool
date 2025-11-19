@@ -7,7 +7,7 @@
 
 ---
 
-## 🧠 Overview
+## 🪟 Overview
 
 The **Caesar Cipher Tool** is a modern, dark-themed Windows desktop application built using **Python 3.14** and **CustomTkinter**.
 It provides a clean and efficient interface for performing classical Caesar cipher operations, including:
