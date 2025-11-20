@@ -34,7 +34,7 @@ The **Caesar Cipher Tool** is a modern, dark-themed Windows desktop application 
 
 * **Encrypt Mode: Shift plaintext forward or backward using any integer value.**
 * **Decrypt Mode: Reverse-shifts ciphertext back into readable text.**
-* **Brute Force Mode: Displays **all 26 possible shifts** inside the Result panel — ideal for CTFs and classical crypto challenges.**
+* **Brute Force Mode: Displays **all 26 possible shifts** inside the Result panel.**
 * **Copy output directly with one click.**
 * **Save Output: Export results to a `.txt` file.**
 * **Real-Time Character / Word Counts**
