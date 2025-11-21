@@ -197,7 +197,7 @@ Useful for solving:
 
 ---
 
-### **Copy & Save Output**
+3. **Copy & Save Output**
 
 * **Copy** → sends the output directly to your clipboard
 * **Save** → exports the result as a `.txt` file
