@@ -1,4 +1,4 @@
-# 🪛 **Caesar Cipher Tool**
+# ⌨️ **Caesar Cipher Tool**
 
 ![Python](https://img.shields.io/badge/Python-3.14-blue?style=for-the-badge\&logo=python\&logoColor=white)
 ![CustomTkinter](https://img.shields.io/badge/GUI-CustomTkinter-0A84FF?style=for-the-badge)
