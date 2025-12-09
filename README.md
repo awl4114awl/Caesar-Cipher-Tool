@@ -13,7 +13,7 @@ The **Caesar Cipher Tool** is a modern, dark-themed Windows desktop application 
 ## 🖼️ GUI Preview
 
 <p align="left">
-  <img src="screenshots/Screenshot 2025-11-18 181539.png" width="500">
+  <img src="screenshots/Screenshot 2025-11-18 181539.png" width="900">
 </p>
 
 ---
