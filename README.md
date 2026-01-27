@@ -1,44 +1,19 @@
-# ⌨️ **Caesar Cipher Tool**
+# Caesar Cipher Tool
 
-![Python](https://img.shields.io/badge/Python-3.14-blue?style=for-the-badge\&logo=python\&logoColor=white)
+## ⓘ Overview
 
----
+The Caesar Cipher Tool is a modern, dark-themed Windows desktop application built using Python 3.14 and CustomTkinter. It provides a clean and efficient interface for performing classical Caesar cipher operations. This tool is part of my cybersecurity & Python development portfolio — demonstrating GUI design, utility-tool aesthetics, and classical cryptography principles.
 
-## 🪟 Overview
+## Features
 
-The **Caesar Cipher Tool** is a modern, dark-themed Windows desktop application built using **Python 3.14** and **CustomTkinter**. It provides a clean and efficient interface for performing classical Caesar cipher operations. This tool is part of my cybersecurity & Python development portfolio — demonstrating GUI design, utility-tool aesthetics, and classical cryptography principles.
+* Encrypt Mode: Shift plaintext forward or backward using any integer value.
+* Decrypt Mode: Reverse-shifts ciphertext back into readable text.
+* Brute Force Mode: Displays all 26 possible shifts inside the Result panel.
+* Copy output directly with one click.
+* Save Output: Export results to a `.txt` file.
+* Real-Time Character / Word Counts
 
----
-
-## 🖼️ GUI Preview
-
-<p align="left">
-  <img src="screenshots/Screenshot 2025-11-18 181539.png" width="900">
-</p>
-
----
-
-## 🖥️ App Icon
-
-<p align="left">
-  <img src="screenshots/icon.ico" width="50">
-  <img src="screenshots/icon.png" width="200">
-</p>
-
----
-
-## ☰ Features
-
-* **Encrypt Mode: Shift plaintext forward or backward using any integer value.**
-* **Decrypt Mode: Reverse-shifts ciphertext back into readable text.**
-* **Brute Force Mode: Displays **all 26 possible shifts** inside the Result panel.**
-* **Copy output directly with one click.**
-* **Save Output: Export results to a `.txt` file.**
-* **Real-Time Character / Word Counts**
-
----
-
-## 📁 Project Structure
+## Project Structure
 
 ```
 Caesar-Cipher-Tool/
@@ -60,40 +35,37 @@ Caesar-Cipher-Tool/
 ├── caesar_cipher_tool.py       # Main application code
 └── requirements.txt            # Python dependencies
 ```
----
 
-## ⬇️ Installation
+## Installation
 
-**1. Clone the repository**
+1. Clone the repository
 
 ```bash
 git clone https://github.com/YOUR-USERNAME/Caesar-Cipher-Tool.git
 cd Caesar-Cipher-Tool
 ```
 
-**2. Create a virtual environment (this is recommended)**
+2. Create a virtual environment (this is recommended)
 
 ```bash
 python -m venv .venv
 ```
 
-**3. Activate the environment**
+3. Activate the environment
 
-**Windows:**
+Windows:
 
 ```bash
 .\.venv\Scripts\activate
 ```
 
-**4. Install dependencies**
+4. Install dependencies
 
 ```bash
 pip install -r requirements.txt
 ```
 
----
-
-## ▶️ Running the Application
+## Running the Application
 
 ```bash
 python caesar_cipher_tool.py
@@ -101,11 +73,9 @@ python caesar_cipher_tool.py
 
 _The GUI launches immediately._
 
----
+## How the Cipher Works
 
-## ❓ How the Cipher Works
-
-The **Caesar cipher** works by shifting letters by a specified number of positions:
+The Caesar cipher works by shifting letters by a specified number of positions:
 
 ```
 Shift 3:
@@ -124,9 +94,9 @@ The tool supports:
 
 ## Brute Force Mode
 
-Clicking **Brute** displays:
+Clicking Brute displays:
 
-* every shift from **0 → 25**
+* every shift from 0 → 25
 * each version on its own line
 * ideal for identifying readable plaintext
 
@@ -137,26 +107,22 @@ Useful for:
 * introductory forensics
 * solving classical cipher problems
 
----
+## Output Overview — What You Can Expect to See
 
-## 📤 Output Overview — What You Can Expect to See
-
-The **Result** panel displays clean, formatted cipher output depending on the selected mode.
+The Result panel displays clean, formatted cipher output depending on the selected mode.
 Below is a quick comparison of how each mode behaves.
 
----
-
-### 🧾 **Output Comparison Table**
+### Output Comparison Table
 
 | Mode            | Input Example  | Output Example                                | What Happens                                                                |
 | --------------- | -------------- | --------------------------------------------- | --------------------------------------------------------------------------- |
-| **Encrypt**     | `Hello World!` | `Khoor Zruog!`                                | Each letter shifts forward by the chosen shift value.                       |
-| **Decrypt**     | `Khoor Zruog!` | `Hello World!`                                | Letters shift backward by the given amount (or negative shift).             |
-| **Brute Force** | `Gdkkn Vnqkc!` | `Shift  1: Hello World!` *(among 26 results)* | Shows all 26 shift possibilities so you can identify the correct plaintext. |
+| Encrypt     | `Hello World!` | `Khoor Zruog!`                                | Each letter shifts forward by the chosen shift value.                       |
+| Decrypt     | `Khoor Zruog!` | `Hello World!`                                | Letters shift backward by the given amount (or negative shift).             |
+| Brute Force | `Gdkkn Vnqkc!` | `Shift  1: Hello World!` *(among 26 results)* | Shows all 26 shift possibilities so you can identify the correct plaintext. |
 
 ---
 
-**1. Encrypt / Decrypt Output**
+1. Encrypt / Decrypt Output
 
 When encrypting or decrypting, the output pane displays:
 
@@ -165,7 +131,7 @@ When encrypting or decrypting, the output pane displays:
 * unchanged non-alphabet characters
 * readable blue-tinted output (Windows Utility theme)
 
-**Example:**
+Example:
 
 ```
 Gdkkn Vnqkc!
@@ -173,9 +139,9 @@ Gdkkn Vnqkc!
 
 ---
 
-**2. Brute Force Output**
+2. Brute Force Output
 
-Clicking **Brute** shows all shifts from 0 → 25:
+Clicking Brute shows all shifts from 0 → 25:
 
 ```
 Shift  0: Gdkkn Vnqkc!
@@ -194,17 +160,13 @@ Useful for solving:
 
 ---
 
-3. **Copy & Save Output**
+3. Copy & Save Output
 
-* **Copy** → sends the output directly to your clipboard
-* **Save** → exports the result as a `.txt` file
+* Copy → sends the output directly to your clipboard
+* Save → exports the result as a `.txt` file
 
-The **status bar** confirms each action.
+The status bar confirms each action.
 
----
+## License
 
-## 🪪 License
-
-This project is released under the **MIT License**. See [`LICENSE`](LICENSE) for details.
-
----
+This project is released under the MIT License. See [`LICENSE`](LICENSE) for details.
