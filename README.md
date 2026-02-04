@@ -1,8 +1,6 @@
 # Caesar Cipher Tool
 
-## ⓘ Overview
-
-The Caesar Cipher Tool is a modern, dark-themed Windows desktop application built using Python 3.14 and CustomTkinter. It provides a clean and efficient interface for performing classical Caesar cipher operations. This tool is part of my cybersecurity & Python development portfolio — demonstrating GUI design, utility-tool aesthetics, and classical cryptography principles.
+The Caesar Cipher Tool is a modern, dark-themed Windows desktop application built using Python 3.14 and CustomTkinter. Comes with a clean and efficient interface for performing classical Caesar cipher operations. This tool is part of my cybersecurity & Python development portfolio.
 
 ## Features
 
